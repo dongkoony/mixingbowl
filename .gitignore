@@ -1,5 +1,5 @@
 # YAML 파일 (GitHub Actions 워크플로우 제외)
-*.yml
+# *.yml
 !.github/workflows/*.yml
 
 # 환경 설정 파일
