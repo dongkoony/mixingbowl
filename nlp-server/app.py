@@ -1,7 +1,7 @@
 from flask import Flask, jsonify, request
 from dotenv import load_dotenv
 from flask_cors import CORS
-from app.api.routes import api_bp
+from routes.vision_routes import vision_bp
 from prometheus_flask_exporter import PrometheusMetrics
 import os
 import logging
@@ -16,13 +16,12 @@ logging.basicConfig(
     format='[%(asctime)s] %(levelname)s in %(module)s: %(message)s'
 )
 
-
 app = Flask(__name__)
 CORS(app)
 metrics = PrometheusMetrics(app)
 
 # Blueprint 등록
-app.register_blueprint(api_bp)
+app.register_blueprint(vision_bp, url_prefix='/vision')
 
 # 요청 전 시간 기록
 @app.before_request
