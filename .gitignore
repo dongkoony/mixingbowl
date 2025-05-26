@@ -43,3 +43,4 @@ build/
 *.ear
 *.zip
 *.tar.gz
+nlp-server/credentials/google-vision-credentials.json
